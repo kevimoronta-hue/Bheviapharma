@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond de la favicon (Optionnel, ici transparent pour plus de modernité ou rond bleu) -->
+  <circle cx="16" cy="16" r="16" fill="#1B2B5E"/>
+  
+  <!-- Symbole "V" ou Triangle Delta inversé (Signature Bhevia) -->
+  <path d="M16 23L7 9H25L16 23Z" fill="white"/>
+  
+  <!-- Accentuation Orange (Le point d'impact/excellence) -->
+  <path d="M16 23L12.5 17.5H19.5L16 23Z" fill="#F5A723"/>
+</svg>

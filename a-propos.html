@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — Benjamin Herisson — Bhevia Pharma</title>
+  <meta name="description" content="Découvrez le profil de Benjamin Herisson, Président et fondateur de Bhevia Pharma. Expert en formation pharmaceutique et conseil officinal.">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon-bhevia.png" sizes="500x500">
+  <link rel="apple-touch-icon" href="assets/images/favicon-bhevia.png">
+  <style>
+    .about-page-grid {
+      display: grid;
+      grid-template-columns: 4fr 5fr;
+      gap: var(--space-16);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .about-page-grid { grid-template-columns: 1fr; }
+    }
+    .about-page-photo {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      background: transparent;
+      box-shadow: var(--shadow-xl);
+    }
+    .about-page-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%;
+    }
+
+    .about-page-content h2 {
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+    }
+    .bio-block {
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: var(--space-8);
+    }
+    .bio-block p {
+      margin-bottom: var(--space-4);
+      font-size: var(--text-lg);
+    }
+    .vision-quote {
+      font-size: var(--text-2xl);
+      line-height: 1.4;
+      color: var(--color-accent-dark);
+      margin: var(--space-8) 0;
+      padding-left: var(--space-6);
+      border-left: 4px solid var(--color-accent);
+      font-style: italic;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo" aria-label="Bhevia Pharma">
+                <img src="assets/images/logo-bhevia-dark.png?v=4" alt="Bhevia Pharma"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span class="nav-logo-fallback" style="display:none;">BHEVIA <span>▲</span> PHARMA</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formation.html">Formation</a></li>
+        <li><a href="a-propos.html" class="active">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Nous contacter</a>
+    </div>
+  </nav>
+
+  <!-- NAV OVERLAY (MOBILE) -->
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true">
+    <div class="nav-overlay-glass">
+      <button class="nav-close" aria-label="Fermer le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <a href="index.html">Accueil</a>
+      <a href="formation.html">Formation</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html" class="btn btn-primary">Nous contacter →</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <div class="container">
+        <span class="badge badge-primary reveal">L'Expertise Bhevia Pharma</span>
+        <h1 class="reveal reveal-delay-1">Benjamin Herisson</h1>
+        <p class="reveal reveal-delay-2">Président &amp; Fondateur de Bhevia Pharma, il développe une approche du conseil pharmaceutique résolument tournée vers l'humain.</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-page-grid">
+          
+          <!-- LEFT : Photo -->
+          <div class="reveal reveal-left">
+            <div class="about-page-photo">
+              <img src="assets/images/benjamin-herisson.jpg" alt="Benjamin Herisson" onerror="this.style.display='none'">
+            </div>
+            <div class="about-credentials-block">
+              <div class="credentials-logos">
+                <img src="assets/images/logos/hec_user.png" alt="HEC Paris" style="height: 48px; width: auto; object-fit: contain;">
+                <img src="assets/images/logos/essec_user.png" alt="ESSEC" style="height: 76px; width: auto; object-fit: contain;">
+                <img src="assets/images/logos/qualiopi_user.png" alt="Qualiopi" style="height: 60px; width: auto; object-fit: contain;">
+              </div>
+              <div class="about-credentials-text">
+                <div class="credential-row">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  <strong>Diplômé HEC Paris & ESSEC</strong>
+                </div>
+                <div class="credential-row italic-row">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>En cours de qualification Qualiopi</span>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <!-- RIGHT : Content -->
+          <div class="about-page-content reveal reveal-right">
+            
+            <blockquote class="vision-quote">
+              "L'excellence au comptoir n'est pas innée, elle s'acquiert par une méthodologie précise et une posture qui génère immédiatement de la confiance."
+            </blockquote>
+
+            <div class="bio-block">
+              <h2>Une vision engagée de la pharmacie</h2>
+              <p>C'est grâce à plus de 15 années d'expérience sur le terrain et au suivi de plusieurs centaines d'officines au sein du laboratoire Pileje que cette méthode et Bhevia Pharma sont nées.</p>
+              <p>Benjamin Herisson a fondé cet organisme avec un but précis : transformer l'expérience officinale en une formation d'expertise reconnue. L'objectif est double : élever le niveau d'expertise du conseil patient, et booster significativement les ventes additionnelles ainsi que la performance globale de votre pharmacie.</p>
+            </div>
+
+            <div class="bio-block">
+              <h2>Expertise reconnue</h2>
+              <p>Président de Bhevia Pharma, Benjamin Herisson a bâti une expertise reconnue dans plus de 25 pays et plus de 1500 officines auprès des titulaires et de leurs équipes. Impliqué activement dans la transmission des savoirs autour de la médication familiale, l'aromathérapie et la relation patient-pharmacien, il conçoit des programmes qui s'ancrent dans la réalité de la pharmacie clinique actuelle.</p>
+              <p>Son approche s'articule autour d'un triptyque : <strong>Sécurité, Posture Professionnelle et Naturalité.</strong></p>
+            </div>
+
+            <div class="about-action-buttons">
+              <a href="contact.html" class="btn btn-accent btn-lg">Échanger avec Benjamin →</a>
+              <a href="formation.html" class="btn btn-outline btn-lg">Découvrir la formation</a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+    <!-- =====================
+       FOOTER
+  ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo-bhevia-white.png" alt="Bhevia Pharma"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="footer-logo-fallback" style="display:none;">BHEVIA <span>&#9650;</span> PHARMA</span>
+          <p>Formations professionnelles en pharmacie officinale. Excellence, impact et confiance au service des &#233;quipes de la sant&#233;.</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="mailto:benjamin.herisson@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+            <a href="https://wa.me/33617920424" aria-label="WhatsApp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 448 512" style="fill: currentColor; stroke: none;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&#169; 2026 Bhevia Pharma. Tous droits r&#233;serv&#233;s.</p>
+        <div class="footer-legal-links">
+          <a href="mentions-legales.html">Mentions l&#233;gales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialit&#233;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
