@@ -871,6 +871,8 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 }
 .about-photo-wrap {
   position: relative;
+}
+.about-brief .about-photo-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1239,15 +1241,19 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 .contact-info-value { font-size: var(--text-base); font-weight: 600; color: white; margin-top: 2px; }
 
 /* Certificates Section Clean Centering */
+/* Credentials block global — reset neutre */
 .about-credentials-block {
   background: white;
   border: 1px solid rgba(0,0,0,0.06);
   border-radius: var(--radius-lg);
   padding: 1.2rem;
-  width: 100%;
-  max-width: 360px;
   box-shadow: var(--shadow-sm);
   text-align: center;
+}
+/* Dans index.html uniquement (section .about-brief) */
+.about-brief .about-credentials-block {
+  width: 100%;
+  max-width: 360px;
 }
 .credentials-logos {
   display: flex; 
@@ -1388,8 +1394,8 @@ p { color: var(--color-text-muted); line-height: 1.75; }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .cta-final .btn-group { flex-direction: column; align-items: center; }
-  .page-header { padding: var(--space-16) 0 var(--space-10); }
-  .page-header h1 { font-size: 2rem; margin-top: var(--space-4); }
+  .page-header { padding: calc(var(--nav-height) + var(--space-10)) 0 var(--space-10); }
+  .page-header h1 { font-size: 2rem; }
   .cta-final { padding: var(--space-16) 0; }
   .cta-final .badge { margin-bottom: var(--space-5); display: inline-block; }
   .cta-final h2 { margin-top: var(--space-3); }
