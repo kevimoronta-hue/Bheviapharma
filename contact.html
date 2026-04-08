@@ -143,6 +143,99 @@
     @media (max-width: 768px) {
       .contact-expert-info { padding: 24px 20px; }
     }
+
+    /* ================================
+       Confirmation Formulaire Premium
+    ================================ */
+    .form-success-overlay {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      animation: successFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes successFadeIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .success-icon-wrap {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1B2B5E, #2a3f7e);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 12px 32px rgba(27,43,94,0.25);
+      animation: successPop 0.5s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes successPop {
+      from { transform: scale(0.5); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    .success-icon-wrap svg {
+      width: 36px; height: 36px;
+      stroke: white; stroke-width: 2.5;
+      stroke-linecap: round; stroke-linejoin: round;
+      fill: none;
+    }
+    .success-checkmark {
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: drawCheck 0.5s 0.5s ease forwards;
+    }
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+    .success-title {
+      font-family: var(--font-main, 'Manrope', sans-serif);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #1B2B5E;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .success-subtitle {
+      font-size: 1rem;
+      color: #6B7280;
+      line-height: 1.7;
+      max-width: 320px;
+      margin: 0 auto 1.5rem;
+    }
+    .success-countdown {
+      font-size: 0.85rem;
+      color: #9CA3AF;
+      margin-bottom: 1.5rem;
+      min-height: 1.4em;
+    }
+    .success-countdown span {
+      font-weight: 700;
+      color: #F5A723;
+    }
+    .success-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: #1B2B5E;
+      color: white;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      font-family: var(--font-main, 'Manrope', sans-serif);
+    }
+    .success-home-btn:hover {
+      background: #F5A723;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245,167,35,0.3);
+    }
+    @media (max-width: 480px) {
+      .form-success-overlay { padding: 2rem 1rem; }
+      .success-title { font-size: 1.3rem; }
+    }
   </style>
 </head>
 <body>
@@ -272,6 +365,21 @@
                 En soumettant ce formulaire, vous acceptez que vos données personnelles soient utilisées pour vous recontacter. Bhevia Pharma s'engage à ne jamais céder vos informations à des tiers sans votre consentement.
               </p>
             </form>
+            <!-- Confirmation envoi -->
+            <div class="form-success-overlay" id="success-message" role="alert" aria-live="polite">
+              <div class="success-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <polyline class="success-checkmark" points="4 12 9 17 20 7"></polyline>
+                </svg>
+              </div>
+              <h2 class="success-title">Message bien reçu !</h2>
+              <p class="success-subtitle">Merci pour votre demande.<br>Benjamin reviendra vers vous sous <strong>24h à 48h</strong>.</p>
+              <p class="success-countdown" id="redirect-countdown">Redirection dans <span id="countdown-num">5</span> secondes…</p>
+              <a href="index.html" class="success-home-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Retour à l'accueil
+              </a>
+            </div>
           </div>
 
         </div>

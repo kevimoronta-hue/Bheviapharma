@@ -97,7 +97,7 @@ document.querySelectorAll('.accordion-header').forEach(header => {
 });
 
 /* ===========================
-   Contact Form
+   Contact Form + Confirmation
 =========================== */
 const contactForm = document.getElementById('contact-form');
 const successMessage = document.getElementById('success-message');
@@ -106,12 +106,33 @@ if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('[type="submit"]');
-    const originalText = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Envoi en cours…';
+
     setTimeout(() => {
+      // Masquer le formulaire
       contactForm.style.display = 'none';
-      if (successMessage) successMessage.style.display = 'block';
+
+      // Afficher la confirmation
+      if (successMessage) {
+        successMessage.style.display = 'flex';
+        successMessage.focus && successMessage.focus();
+      }
+
+      // Countdown + redirection
+      let seconds = 5;
+      const countEl = document.getElementById('countdown-num');
+      const countdownLine = document.getElementById('redirect-countdown');
+
+      const tick = setInterval(() => {
+        seconds--;
+        if (countEl) countEl.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(tick);
+          if (countdownLine) countdownLine.textContent = 'Redirection…';
+          window.location.href = 'index.html';
+        }
+      }, 1000);
     }, 1400);
   });
 }
