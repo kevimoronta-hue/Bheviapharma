@@ -56,6 +56,106 @@
       flex-shrink: 0;
       font-size: 14px;
     }
+
+    /* ===========================
+       Formation Hero — 2 colonnes
+    =========================== */
+    .formation-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+    .formation-hero-photo-wrap {
+      position: relative;
+    }
+    .formation-hero-photo {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-xl);
+    }
+    .formation-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .formation-hero-floating {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-5);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .formation-hero-floating strong {
+      display: block;
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--color-accent);
+    }
+    .formation-hero-floating span {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+    }
+    .formation-hero-content h2 {
+      color: var(--color-primary);
+      font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+      margin-bottom: var(--space-5);
+      margin-top: var(--space-4);
+    }
+    .formation-hero-content .lead {
+      font-size: var(--text-lg);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--space-6);
+    }
+    .formation-hero-stats {
+      display: flex;
+      gap: var(--space-6);
+      margin-bottom: var(--space-6);
+      padding: var(--space-5) var(--space-6);
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      border-left: 3px solid var(--color-accent);
+    }
+    .fhs-item {
+      text-align: center;
+    }
+    .fhs-item strong {
+      display: block;
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+    }
+    .fhs-item span {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--color-text-muted);
+    }
+    .formation-hero-ctas {
+      display: flex;
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+      flex-wrap: wrap;
+    }
+    @media (max-width: 900px) {
+      .formation-hero-inner { grid-template-columns: 1fr; gap: var(--space-10); }
+      .formation-hero-floating { right: 0; bottom: -12px; }
+      .formation-hero-stats { gap: var(--space-4); }
+      .formation-hero-ctas { flex-direction: column; }
+      .formation-hero-ctas .btn { width: 100%; justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -103,6 +203,68 @@
         <p class="reveal reveal-delay-2">Renforcez la qualité, la sécurité et l'efficacité de vos conseils au comptoir à travers une approche scientifique et humaine responsable.</p>
       </div>
     </header>
+
+    <!-- ===========================
+         FORMATION HERO — Photo gauche / Texte droite
+    =========================== -->
+    <section class="section" style="padding-bottom: 0;">
+      <div class="container">
+        <div class="formation-hero-inner">
+
+          <!-- LEFT : Photo -->
+          <div class="formation-hero-photo-wrap reveal-left">
+            <div class="formation-hero-photo">
+              <img
+                src="assets/images/hero-formation.jpg"
+                alt="Formation Bhevia Pharma en officine"
+                onerror="this.src='assets/images/hero-accueil-bhevia-v2.jpg'"
+              >
+            </div>
+            <div class="formation-hero-floating">
+              <strong>+1500</strong>
+              <span>Officines formées</span>
+            </div>
+          </div>
+
+          <!-- RIGHT : Contenu -->
+          <div class="formation-hero-content reveal">
+            <span class="badge badge-accent">Formation Inter &amp; Intra-Officine</span>
+            <h2>Une méthode de terrain, conçue par un expert du conseil pharmaceutique</h2>
+            <p class="lead">Benjamin Herisson a formé plus de 1500 officines dans 25 pays. Cette formation condense 15 ans d'expérience en un programme immédiatement applicable au comptoir.</p>
+            <div class="formation-hero-stats">
+              <div class="fhs-item">
+                <strong>2</strong>
+                <span>Journées</span>
+              </div>
+              <div class="fhs-item">
+                <strong>14h</strong>
+                <span>Pratique intensive</span>
+              </div>
+              <div class="fhs-item">
+                <strong>70%</strong>
+                <span>Cas réels</span>
+              </div>
+              <div class="fhs-item">
+                <strong>100%</strong>
+                <span>OPCO-EP</span>
+              </div>
+            </div>
+            <ul class="check-list">
+              <li>Protocoles de conseil validés et applicables dès le lendemain</li>
+              <li>Méthode DISC pour adapter sa posture à chaque patient</li>
+              <li>Ventes additionnelles éthiques et naturelles</li>
+              <li>Prise en charge OPCO-EP — zéro reste à charge</li>
+            </ul>
+            <div class="formation-hero-ctas">
+              <a href="contact.html" class="btn btn-primary btn-lg">M'inscrire à la formation →</a>
+              <a href="#programme" class="btn btn-outline btn-lg">Voir le programme</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
 
     <section class="section">
       <div class="container">
