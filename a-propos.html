@@ -76,7 +76,70 @@
     .ahs-item { text-align: center; }
     .ahs-item strong { display: block; font-size: var(--text-2xl); font-weight: 800; color: var(--color-accent); line-height: 1; }
     .ahs-item span { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-text-muted); }
-    .about-hero-creds { background: white; border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-sm); margin-bottom: var(--sp    <section class="section">
+    .about-hero-creds { background: white; border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-sm); margin-bottom: var(--space-6); }
+    .about-hero-creds .credentials-logos { border-bottom: none; padding-bottom: 0; margin-bottom: 0.75rem; justify-content: flex-start; }
+    .about-hero-creds .about-credentials-text { text-align: left; }
+    .about-hero-cta { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+    @media (max-width: 900px) {
+      .about-hero-inner { grid-template-columns: 1fr; gap: var(--space-10); }
+      .about-hero-photo { max-width: 300px; aspect-ratio: 1/1; margin: 0 auto; }
+      .about-hero-photo-wrap { display: flex; flex-direction: column; align-items: center; }
+      .about-hero-floating { position: static; margin-top: var(--space-3); }
+      .about-hero-stats { gap: var(--space-4); justify-content: center; }
+      .about-hero-cta { flex-direction: column; }
+      .about-hero-cta .btn { width: 100%; justify-content: center; }
+      .about-hero-creds .credentials-logos { justify-content: center; }
+      .about-hero-creds .about-credentials-text { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo" aria-label="Bhevia Pharma">
+                <img src="assets/images/logo-bhevia-dark.png?v=4" alt="Bhevia Pharma"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span class="nav-logo-fallback" style="display:none;">BHEVIA <span>▲</span> PHARMA</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formation.html">Formation</a></li>
+        <li><a href="a-propos.html" class="active">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Nous contacter</a>
+    </div>
+  </nav>
+
+  <!-- NAV OVERLAY (MOBILE) -->
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true">
+    <div class="nav-overlay-glass">
+      <button class="nav-close" aria-label="Fermer le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <a href="index.html">Accueil</a>
+      <a href="formation.html">Formation</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html" class="btn btn-primary">Nous contacter →</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <div class="container">
+        <span class="badge badge-primary reveal">L'Expertise Bhevia Pharma</span>
+        <h1 class="reveal reveal-delay-1">Benjamin Herisson</h1>
+        <p class="reveal reveal-delay-2">Président &amp; Fondateur de Bhevia Pharma, il développe une approche du conseil pharmaceutique résolument tournée vers l'humain.</p>
+      </div>
+    </header>
+
+    <section class="section">
       <div class="container">
         <div class="about-hero-inner">
 
@@ -140,51 +203,6 @@
           </div>
         </div>
 
-      </div>
-    </section>="assets/images/logos/essec_user.png" alt="ESSEC" style="height: 76px; width: auto; object-fit: contain;">
-                <img src="assets/images/logos/qualiopi_user.png" alt="Qualiopi" style="height: 60px; width: auto; object-fit: contain;">
-              </div>
-              <div class="about-credentials-text">
-                <div class="credential-row">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                  <strong>Diplômé HEC Paris & ESSEC</strong>
-                </div>
-                <div class="credential-row italic-row">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  <span>En cours de qualification Qualiopi</span>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-
-          <!-- RIGHT : Content -->
-          <div class="about-page-content reveal reveal-right">
-            
-            <blockquote class="vision-quote">
-              "L'excellence au comptoir n'est pas innée, elle s'acquiert par une méthodologie précise et une posture qui génère immédiatement de la confiance."
-            </blockquote>
-
-            <div class="bio-block">
-              <h2>Une vision engagée de la pharmacie</h2>
-              <p>C'est grâce à plus de 15 années d'expérience sur le terrain et au suivi de plusieurs centaines d'officines au sein du laboratoire Pileje que cette méthode et Bhevia Pharma sont nées.</p>
-              <p>Benjamin Herisson a fondé cet organisme avec un but précis : transformer l'expérience officinale en une formation d'expertise reconnue. L'objectif est double : élever le niveau d'expertise du conseil patient, et booster significativement les ventes additionnelles ainsi que la performance globale de votre pharmacie.</p>
-            </div>
-
-            <div class="bio-block">
-              <h2>Expertise reconnue</h2>
-              <p>Président de Bhevia Pharma, Benjamin Herisson a bâti une expertise reconnue dans plus de 25 pays et plus de 1500 officines auprès des titulaires et de leurs équipes. Impliqué activement dans la transmission des savoirs autour de la médication familiale, l'aromathérapie et la relation patient-pharmacien, il conçoit des programmes qui s'ancrent dans la réalité de la pharmacie clinique actuelle.</p>
-              <p>Son approche s'articule autour d'un triptyque : <strong>Sécurité, Posture Professionnelle et Naturalité.</strong></p>
-            </div>
-
-            <div class="about-action-buttons">
-              <a href="contact.html" class="btn btn-accent btn-lg">Échanger avec Benjamin →</a>
-              <a href="formation.html" class="btn btn-outline btn-lg">Découvrir la formation</a>
-            </div>
-
-          </div>
-
-        </div>
       </div>
     </section>
   </main>
