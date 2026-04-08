@@ -1515,3 +1515,8 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 .footer-legal-links a:hover {
   color: rgba(255,255,255,0.95);
 }
+
+/* index.html — centrage bouton programme mobile uniquement */
+@media (max-width: 900px) {
+  .programme-cta-wrap { text-align: center; }
+}
