@@ -1520,3 +1520,123 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 @media (max-width: 900px) {
   .programme-cta-wrap { text-align: center; }
 }
+
+/* ===========================
+   Floating Calendly CTA
+=========================== */
+.floating-cal {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: white;
+  font-family: var(--font-main);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 8px 32px rgba(27, 43, 94, 0.35), 0 2px 8px rgba(27, 43, 94, 0.2);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease;
+  white-space: nowrap;
+  /* Appear on load */
+  animation: floatIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+}
+
+.floating-cal:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 16px 48px rgba(27, 43, 94, 0.4), 0 4px 12px rgba(27, 43, 94, 0.25);
+}
+
+.floating-cal:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Gold accent border ring */
+.floating-cal::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-accent), transparent 60%);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+/* Icon wrapper + pulse */
+.floating-cal-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.floating-cal-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--color-accent);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  position: relative;
+  z-index: 1;
+}
+
+.floating-cal-icon::after {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(245, 167, 35, 0.35);
+  animation: calFloatPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes calFloatPulse {
+  0%   { transform: scale(0.7); opacity: 0.9; }
+  70%  { transform: scale(1.8); opacity: 0; }
+  100% { transform: scale(0.7); opacity: 0; }
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.9); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.floating-cal-text {
+  line-height: 1;
+}
+
+/* ── MOBILE: icon only ── */
+@media (max-width: 640px) {
+  .floating-cal {
+    bottom: 20px;
+    right: 20px;
+    padding: 14px;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    justify-content: center;
+  }
+
+  .floating-cal-text {
+    display: none;
+  }
+
+  .floating-cal-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
