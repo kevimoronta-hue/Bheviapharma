@@ -1,0 +1,10 @@
+{
+  "name": "bhevia-pharma",
+  "version": "1.0.0",
+  "description": "Site Bhevia Pharma — Formation & Conseil en Pharmacie Officinale",
+  "scripts": {
+    "start": "python3 -m http.server 3333",
+    "dev": "python3 -m http.server 3333"
+  },
+  "author": "Bhevia Pharma"
+}
