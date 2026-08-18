@@ -342,24 +342,24 @@ function downloadShareImage() {
 }
 
 function shareLinkedIn() {
-  const text = buildShareText(computeTier());
+  const tier = computeTier();
+  const text = buildShareText(tier);
   const shareURL = `https://www.bhevia.com/share/${score}.html`;
 
+  // Copie préalable du texte au presse-papiers pour le cas où l'app native masque le champ texte
   copyText(text);
 
-  const isAndroid = /Android/i.test(navigator.userAgent);
-  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-  if (isAndroid) {
-    // Intent Android pour forcer le lancement de l'application LinkedIn native
-    const intentUrl = `intent://sharing/share-offsite/?url=${encodeURIComponent(shareURL)}#Intent;package=com.linkedin.android;scheme=https;end;`;
-    window.location.href = intentUrl;
-  } else if (isIOS) {
-    // Sur iOS, window.location.href active la détection Universal Links (ouvre l'application native), contrairement à window.open qui ouvre un nouvel onglet web
-    const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
-    window.location.href = url;
+  // Utilisation prioritaire du partage natif (Mobile / Web Share API)
+  if (navigator.share && typeof navigator.share === "function") {
+    navigator.share({
+      title: "Jeu comptoir BHEVIA",
+      text: text,
+      url: shareURL
+    }).catch((err) => {
+      console.log("Partage natif annulé ou non disponible :", err);
+    });
   } else {
-    // Sur ordinateur : ouverture dans un nouvel onglet classique
+    // Fallback Desktop / Navigateurs non compatibles
     const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   }
