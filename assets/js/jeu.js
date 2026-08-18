@@ -348,15 +348,17 @@ function shareLinkedIn() {
 
   copyText(text);
 
-  const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   if (isMobile) {
-    // Navigation directe synchrone depuis le tap utilisateur pour permettre l'interception par l'application mobile native (Universal Links / App Links)
-    window.location.href = url;
+    // Endpoint shareArticle avec mini=true sur mobile pour favoriser le déclenchement du composer de l'application LinkedIn native
+    const mobileUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareURL)}&title=${encodeURIComponent("Jeu comptoir BHEVIA")}&summary=${encodeURIComponent(text)}`;
+    console.log("LinkedIn Mobile Share URL:", mobileUrl);
+    window.location.href = mobileUrl;
   } else {
-    // Comportement Desktop inchangé
-    window.open(url, "_blank", "noopener,noreferrer");
+    // Desktop : conservation stricte de l'endpoint share-offsite fonctionnel
+    const desktopUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
+    window.open(desktopUrl, "_blank", "noopener,noreferrer");
   }
 }
 
