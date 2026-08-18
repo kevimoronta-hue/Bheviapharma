@@ -342,10 +342,22 @@ function downloadShareImage() {
 }
 
 function shareLinkedIn() {
-  copyText(buildShareText(computeTier()));
+  const text = buildShareText(computeTier());
   const shareURL = `https://www.bhevia.com/share/${score}.html`;
-  const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
+
+  if (navigator.share && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // Sur téléphone : ouvre le menu de partage natif (qui permet de choisir l'app LinkedIn directement)
+    navigator.share({
+      title: "Mon score au jeu comptoir BHEVIA",
+      text: text,
+      url: shareURL
+    }).catch(console.error);
+  } else {
+    // Sur ordinateur : copie du texte et ouverture du lien web
+    copyText(text);
+    const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
 }
 
 function copyText(text) {
