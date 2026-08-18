@@ -1,0 +1,112 @@
+#jeu .game-wrapper {
+    margin: 0;
+    min-height: 100vh;
+    background: #FAFAF9;
+    color: #0C0A09;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+#jeu .app { width: 100%; max-width: 760px; }
+#jeu .wordmark {
+    display: flex; align-items: center; gap: 9px;
+    font-weight: 800; letter-spacing: 0.06em; font-size: 15px;
+    text-transform: uppercase; color: #1B2B5E; margin-bottom: 22px;
+  }
+#jeu .diamond { width: 12px; height: 12px; background: #F5A723; transform: rotate(45deg); display: inline-block; }
+#jeu .card {
+    position: relative;
+    background: #FFFFFF; border-radius: 20px; padding: 44px 40px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.06); border: 1px solid #F3F4F6;
+  }
+#jeu .card.card-result::before {
+    content: ""; position: absolute; inset: -60px; z-index: -1;
+    background: radial-gradient(circle, rgba(245,167,35,0.20) 0%, transparent 70%);
+  }
+#jeu .card-result { text-align: center; }
+#jeu .card-result .kicker { text-align: center; }
+#jeu h1 { font-size: 32px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 8px 0; }
+#jeu .subtitle { color: #F5A723; font-weight: 800; font-size: 18px; font-style: italic; margin: 0 0 20px 0; }
+#jeu p.lead { color: #6B7280; font-size: 16px; line-height: 1.65; margin: 0 0 28px 0; }
+#jeu .disc-intro { color: #374151; font-size: 15.5px; line-height: 1.65; margin: 0 0 22px 0; }
+#jeu .color-key {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px;
+    margin: 0 0 26px 0; padding: 20px 22px;
+    background: #FAFAF9; border-radius: 14px; border: 1px solid #F3F4F6;
+  }
+#jeu .color-key .item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.45; color: #374151; }
+#jeu .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+#jeu .c-rouge { background: #C6524C; }
+#jeu .c-jaune { background: #D6A72D; }
+#jeu .c-vert { background: #6C9C78; }
+#jeu .c-bleu { background: #4E7EA8; }
+#jeu .progress-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 13px; color: #9CA3AF; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+#jeu .progress-bar { height: 7px; background: #F3F4F6; border-radius: 4px; overflow: hidden; margin-bottom: 26px; }
+#jeu .progress-fill { height: 100%; background: #F5A723; border-radius: 4px; transition: width .3s ease; }
+#jeu .kicker { color: #F5A723; font-weight: 800; letter-spacing: 0.08em; font-size: 12.5px; text-transform: uppercase; margin: 0 0 12px 0; }
+#jeu .situation { font-size: 20px; line-height: 1.55; font-weight: 600; margin: 0 0 28px 0; color: #0C0A09; }
+#jeu .options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+#jeu .opt {
+    border: 2px solid #E5E7EB; background: #FFFFFF; border-radius: 10px;
+    padding: 18px 16px; font-size: 16px; font-weight: 700; cursor: pointer;
+    text-align: left; display: flex; align-items: center; gap: 8px; color: #0C0A09;
+    transition: border-color .15s, background .15s;
+  }
+#jeu .opt:hover { border-color: #F5A723; }
+#jeu .opt.correct { border-color: #2E7D32; background: #EAF5EA; }
+#jeu .opt.wrong { border-color: #DC2626; background: #FEF2F2; }
+#jeu .opt:disabled { cursor: default; }
+#jeu .feedback { margin-top: 20px; font-size: 15px; color: #374151; border-radius: 10px; padding: 18px 20px; line-height: 1.6; }
+#jeu .feedback.is-correct { background: #EAF5EA; border-left: 4px solid #2E7D32; }
+#jeu .feedback.is-wrong { background: #FEF2F2; border-left: 4px solid #DC2626; }
+#jeu .feedback-verdict { font-weight: 800; font-size: 15.5px; margin-bottom: 6px; }
+#jeu .feedback.is-correct .feedback-verdict { color: #2E7D32; }
+#jeu .feedback.is-wrong .feedback-verdict { color: #DC2626; }
+#jeu .feedback-explain { color: #374151; }
+#jeu .next-btn {
+    margin-top: 26px; display: inline-block; background: #1B2B5E; color: #FAFAF9;
+    font-weight: 800; font-size: 15px; border: none; padding: 14px 28px;
+    border-radius: 9999px; cursor: pointer;
+  }
+#jeu .next-btn:hover { background: #243d82; }
+#jeu .start-btn {
+    background: #F5A723; color: #1B2B5E; font-weight: 800; font-size: 16px;
+    border: none; padding: 16px 32px; border-radius: 9999px; cursor: pointer;
+  }
+#jeu .start-btn:hover { background: #d48f1a; }
+#jeu .result-kicker-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 8px 0; }
+#jeu .kicker-line { width: 60px; height: 1px; background: #F5A723; opacity: 0.4; }
+#jeu .kicker-diamond { width: 6px; height: 6px; background: #F5A723; transform: rotate(45deg); flex-shrink: 0; }
+#jeu .result-kicker-row .kicker { margin: 0; }
+#jeu .medal-preview { display: block; width: 100%; max-width: 300px; margin: 4px auto 6px auto; }
+#jeu .score-tier { font-size: 19px; font-weight: 700; color: #1B2B5E; margin: 4px 0 30px 0; line-height: 1.4; }
+#jeu .share-box {
+    background: #1B2B5E; color: #FAFAF9; border-radius: 14px; padding: 24px 26px;
+    font-size: 15px; line-height: 1.75; margin: 18px 0 0 0; white-space: pre-wrap;
+    text-align: left;
+  }
+#jeu .linkedin-btn {
+    background: #F5A723; color: #1B2B5E; border: none;
+    font-weight: 800; font-size: 16px; padding: 16px 30px; border-radius: 9999px;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+  }
+#jeu .linkedin-btn:hover { background: #d48f1a; }
+#jeu .li-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; background: #1B2B5E; color: #FFFFFF;
+    font-weight: 800; font-size: 12px; border-radius: 5px; flex-shrink: 0;
+  }
+#jeu .share-support { color: #6B7280; font-size: 14px; line-height: 1.5; margin: 16px 0 0 0; }
+#jeu .divider-row { display: flex; align-items: center; gap: 10px; margin: 18px 0; }
+#jeu .divider-line { flex: 1; height: 1px; background: #E5E7EB; }
+#jeu .divider-diamond { width: 6px; height: 6px; background: #F5A723; transform: rotate(45deg); flex-shrink: 0; }
+#jeu .toggle-text-btn {
+    background: none; border: none; cursor: pointer; color: #1B2B5E;
+    font-weight: 700; font-size: 14px; text-decoration: underline;
+    display: inline-flex; align-items: center; gap: 6px; padding: 4px; margin-top: 4px;
+  }
+#jeu .share-hint { font-size: 12.5px; color: #9CA3AF; margin-top: 14px; line-height: 1.5; }
+#jeu .cat-tag { display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: #9CA3AF; margin-bottom: 8px; }
+#jeu footer { text-align: center; font-size: 12px; color: #9CA3AF; margin-top: 24px; }
