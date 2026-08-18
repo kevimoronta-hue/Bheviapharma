@@ -345,16 +345,21 @@ function shareLinkedIn() {
   const text = buildShareText(computeTier());
   const shareURL = `https://www.bhevia.com/share/${score}.html`;
 
-  if (navigator.share && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    // Sur téléphone : ouvre le menu de partage natif (qui permet de choisir l'app LinkedIn directement)
-    navigator.share({
-      title: "Mon score au jeu comptoir BHEVIA",
-      text: text,
-      url: shareURL
-    }).catch(console.error);
+  copyText(text);
+
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isAndroid) {
+    // Intent Android pour forcer le lancement de l'application LinkedIn native
+    const intentUrl = `intent://sharing/share-offsite/?url=${encodeURIComponent(shareURL)}#Intent;package=com.linkedin.android;scheme=https;end;`;
+    window.location.href = intentUrl;
+  } else if (isIOS) {
+    // Sur iOS, window.location.href active la détection Universal Links (ouvre l'application native), contrairement à window.open qui ouvre un nouvel onglet web
+    const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
+    window.location.href = url;
   } else {
-    // Sur ordinateur : copie du texte et ouverture du lien web
-    copyText(text);
+    // Sur ordinateur : ouverture dans un nouvel onglet classique
     const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   }
