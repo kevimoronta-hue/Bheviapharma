@@ -346,12 +346,18 @@ function shareLinkedIn() {
   const text = buildShareText(tier);
   const shareURL = `https://www.bhevia.com/share/${score}.html`;
 
-  // Copie automatique du texte dans le presse-papier
   copyText(text);
 
-  // Ouverture directe de l'endpoint de partage LinkedIn (identique sur Desktop et Mobile)
   const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // Navigation directe synchrone depuis le tap utilisateur pour permettre l'interception par l'application mobile native (Universal Links / App Links)
+    window.location.href = url;
+  } else {
+    // Comportement Desktop inchangé
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
 }
 
 function copyText(text) {
