@@ -346,23 +346,12 @@ function shareLinkedIn() {
   const text = buildShareText(tier);
   const shareURL = `https://www.bhevia.com/share/${score}.html`;
 
-  // Copie préalable du texte au presse-papiers pour le cas où l'app native masque le champ texte
+  // Copie automatique du texte dans le presse-papier
   copyText(text);
 
-  // Utilisation prioritaire du partage natif (Mobile / Web Share API)
-  if (navigator.share && typeof navigator.share === "function") {
-    navigator.share({
-      title: "Jeu comptoir BHEVIA",
-      text: text,
-      url: shareURL
-    }).catch((err) => {
-      console.log("Partage natif annulé ou non disponible :", err);
-    });
-  } else {
-    // Fallback Desktop / Navigateurs non compatibles
-    const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
-  }
+  // Ouverture directe de l'endpoint de partage LinkedIn (identique sur Desktop et Mobile)
+  const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareURL)}`;
+  window.open(url, "_blank", "noopener,noreferrer");
 }
 
 function copyText(text) {
