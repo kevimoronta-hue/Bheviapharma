@@ -172,7 +172,7 @@ function drawMedal(ctx, cx, cy, R) {
   drawSparkle(ctx, cx + R * 0.92, cy - R * 0.82, R * 0.065);
 
   // ribbon tails (swallowtail notch)
-  ctx.fillStyle = "#1B2B5E";
+  ctx.fillStyle = "#13224B";
   drawRibbonTail(ctx, cx - R * 0.42, cy + R * 0.62, R * 0.34, R * 0.95, -1);
   drawRibbonTail(ctx, cx + R * 0.42, cy + R * 0.62, R * 0.34, R * 0.95, 1);
 
@@ -281,7 +281,7 @@ function renderShareCard(tier) {
   ctx.fillStyle = "#F5A723";
   ctx.fillRect(-9, -9, 18, 18);
   ctx.restore();
-  ctx.fillStyle = "#1B2B5E";
+  ctx.fillStyle = "#13224B";
   ctx.font = "800 28px Manrope, sans-serif";
   ctx.textAlign = "left";
   ctx.textBaseline = "middle";
@@ -289,7 +289,7 @@ function renderShareCard(tier) {
 
   drawMedal(ctx, cx, 430, 175);
 
-  ctx.fillStyle = "#1B2B5E";
+  ctx.fillStyle = "#13224B";
   ctx.font = "700 38px Manrope, sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "alphabetic";

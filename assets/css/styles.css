@@ -4,9 +4,11 @@
    CSS Custom Properties
 =========================== */
 :root {
-  --color-primary: #1B2B5E;
-  --color-primary-light: #243d82;
-  --color-primary-dark: #121e44;
+  --global-desktop-width: clamp(1280px, 88vw, 5000px);
+  --color-primary: #13224B;
+  --color-primary-light: #192E62;
+  --color-primary-dark: #0B132C;
+  --gradient-primary: radial-gradient(140% 120% at 85% 15%, var(--color-primary-light) 0%, var(--color-primary) 45%, var(--color-primary-dark) 100%);
   --color-accent: #F5A723;
   --color-accent-light: #f7b94d;
   --color-accent-dark: #d48f1a;
@@ -240,9 +242,9 @@ p { color: var(--color-text-muted); line-height: 1.75; }
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 64px);
-  max-width: 1280px;
+  max-width: var(--global-desktop-width);
   z-index: 1000;
-  height: 72px;
+  height: 64px;
   
   /* Ultra-clear glass base - Vivid, non-grey background reflection */
   background: 
@@ -327,23 +329,28 @@ p { color: var(--color-text-muted); line-height: 1.75; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-8);
+  gap: clamp(var(--space-8), 3vw, 64px);
   padding: 0 var(--space-3) 0 var(--space-6);
   position: relative;
   z-index: 2;
 }
 
+.navbar-inner.container {
+  max-width: 100% !important;
+}
+
+
 /* Clean PNG Transparent Logo */
 .nav-logo { flex-shrink: 0; display: flex; align-items: center; }
 .nav-logo img { 
-  height: 40px; 
+  height: 44px; 
   width: auto !important; max-width: max-content !important; 
   object-fit: contain; 
   display: block;
   mix-blend-mode: normal;
 }
 .nav-logo-svg-wrapper { display: flex; align-items: center; }
-.nav-logo-svg { height: 40px; width: auto !important; max-width: max-content !important; display: block; }
+.nav-logo-svg { height: 44px; width: auto !important; max-width: max-content !important; display: block; }
 .nav-logo-fallback {
   font-size: var(--text-xl);
   font-weight: 700;
@@ -351,7 +358,7 @@ p { color: var(--color-text-muted); line-height: 1.75; }
   letter-spacing: -0.03em;
 }
 .nav-logo-fallback span { color: var(--color-accent); }
-.nav-links { display: flex; align-items: center; gap: var(--space-8); }
+.nav-links { display: flex; align-items: center; gap: clamp(var(--space-8), 3vw, 64px); }
 .nav-links a {
   font-size: var(--text-base);
   font-weight: 500;
@@ -741,7 +748,7 @@ p { color: var(--color-text-muted); line-height: 1.75; }
    Stats Bar
 =========================== */
 .stats-bar {
-  background: var(--color-primary);
+  background: var(--gradient-primary);
   padding: var(--space-12) 0;
 }
 .stats-grid {
@@ -899,7 +906,7 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 
 /* Right Panel */
 .formation-info-panel {
-  background: var(--color-primary);
+  background: var(--gradient-primary);
   border-radius: var(--radius-xl);
   padding: var(--space-10);
   color: white;
@@ -1031,7 +1038,15 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 /* ===========================
    Testimonials
 =========================== */
-.testimonials { background: var(--color-surface-2); }
+
+.testimonials { 
+  background: var(--gradient-primary); 
+}
+.testimonials .section-header h2,
+.testimonials .section-header p {
+  color: #FFFFFF;
+}
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1082,7 +1097,7 @@ p { color: var(--color-text-muted); line-height: 1.75; }
    Final CTA
 =========================== */
 .cta-final {
-  background: var(--color-primary);
+  background: var(--gradient-primary);
   position: relative;
   overflow: hidden;
   padding: var(--space-32) 0;
@@ -1123,12 +1138,7 @@ p { color: var(--color-text-muted); line-height: 1.75; }
   padding: 64px 56px 36px;
   
   /* Profondeur du Bleu Bhevia (Architectural, Riche & Lumineux) */
-  background: 
-    radial-gradient(140% 120% at 85% 15%, 
-      #192E62 0%, 
-      #13224B 45%, 
-      #0B132C 100%
-    );
+  background: var(--gradient-primary);
   
   /* Bordure spéculaire & Ombre Portée Premium */
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -1170,8 +1180,11 @@ p { color: var(--color-text-muted); line-height: 1.75; }
   position: relative;
   z-index: 2;
   padding-bottom: 48px;
-  max-width: 1280px;
+  max-width: var(--global-desktop-width);
+  width: 100%;
   margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
 }
 
 /* Col 1: Brand */
@@ -1421,6 +1434,8 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 
   .footer-grid {
     grid-template-columns: 1fr;
+    padding-left: 0;
+    padding-right: 0;
     gap: var(--space-8);
     padding-bottom: 32px;
   }
@@ -1500,6 +1515,7 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 =========================== */
 @media (max-width: 768px) {
   :root {
+  --global-desktop-width: clamp(1280px, 88vw, 5000px);
     --space-24: 64px;
     --space-20: 48px;
     --space-16: 40px;
@@ -1591,6 +1607,11 @@ p { color: var(--color-text-muted); line-height: 1.75; }
   .navbar-inner {
     padding: 0 var(--space-4);
   }
+
+.navbar-inner.container {
+  max-width: 100% !important;
+}
+
   .nav-logo img, .nav-logo-svg {
     height: 44px !important;
   }
@@ -1614,4 +1635,18 @@ p { color: var(--color-text-muted); line-height: 1.75; }
   margin: var(--space-6) auto 0;
   transform: scale(0.92);
   transform-origin: center;
+}
+
+/* White variant for the final CTA section */
+.cta-final-white {
+  background: var(--color-surface);
+}
+.cta-final-white::before {
+  display: none;
+}
+.cta-final-white h2 {
+  color: var(--color-text);
+}
+.cta-final-white p {
+  color: var(--color-text-muted);
 }
