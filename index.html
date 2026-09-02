@@ -16,85 +16,8 @@
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <style>
-    /* === Bouton Calendly Premium === */
-    .btn-calendly {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 18px 36px;
-      border-radius: 4px;
-      font-family: var(--font-main);
-      font-size: 1.125rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      cursor: pointer;
-      border: 2px solid rgba(255,255,255,0.9);
-      background: rgba(255,255,255,0.12);
-      color: white;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    .btn-calendly::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: white;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
 
-    .cta-final-white .btn-calendly {
-      border-color: var(--color-primary);
-      background: transparent;
-      color: var(--color-primary);
-    }
-    .cta-final-white .btn-calendly:hover {
-      background: rgba(27, 43, 94, 0.05);
-    }
-
-    .btn-calendly:hover {
-      background: rgba(255,255,255,0.22);
-      border-color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.25);
-      color: white;
-    }
-    .btn-calendly svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-    }
-    /* Pulse sur l'icône calendrier */
-    .calendly-icon-wrap {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .calendly-icon-wrap::after {
-      content: '';
-      position: absolute;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(245, 167, 35, 0.5);
-      animation: calPulse 2s ease-in-out infinite;
-    }
-    @keyframes calPulse {
-      0%   { transform: scale(0.8); opacity: 0.8; }
-      70%  { transform: scale(1.6); opacity: 0; }
-      100% { transform: scale(0.8); opacity: 0; }
-    }
-    /* Réduction si prefers-reduced-motion */
-    @media (prefers-reduced-motion: reduce) {
-      .calendly-icon-wrap::after { animation: none; }
-      .btn-calendly { transition: none; }
-    }
-  </style>
+</style>
 </head>
 <body>
 
@@ -169,8 +92,18 @@
             Formation professionnelle en pharmacie conçue pour des équipes qui veulent allier impact, confiance et performance au comptoir.
           </p>
           <div class="hero-actions">
-            <a href="formation.html" class="btn btn-primary btn-lg">Découvrir la formation →</a>
-            <a href="contact.html" class="btn btn-outline btn-lg">Nous contacter</a>
+            <a href="formation.html" class="btn btn-primary btn-lg">
+  <span class="btn-text">Découvrir la formation</span>
+  <span class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </span>
+</a>
+            <a href="contact.html" class="btn btn-outline btn-lg">
+  <span class="btn-text">Nous contacter</span>
+  <span class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </span>
+</a>
           </div>
           <div class="hero-trust">
             <div class="hero-trust-dot"></div>
@@ -352,7 +285,12 @@
             </div>
 
             <div class="programme-cta-wrap" style="margin-top: 2rem;">
-              <a href="formation.html" class="btn btn-outline">Voir le programme complet →</a>
+              <a href="formation.html" class="btn btn-outline">
+  <span class="btn-text">Voir le programme complet</span>
+  <span class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </span>
+</a>
             </div>
           </div>
 
@@ -402,7 +340,12 @@
               </div>
 
               <div class="fip-cta">
-                <a href="contact.html" class="btn btn-accent">Inscrire mon équipe →</a>
+                <a href="contact.html" class="btn btn-accent">
+  <span class="btn-text">Inscrire mon équipe</span>
+  <span class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </span>
+</a>
               </div>
             </div>
           </div>
@@ -458,7 +401,12 @@
               Président de Bhevia Pharma, Benjamin Herisson a bâti une expertise reconnue dans plus de 25 pays et plus de 1500 officines auprès des titulaires et de leurs équipes. Sa vision : réconcilier l'excellence scientifique, la relation humaine et la performance commerciale responsable au sein de chaque officine.
             </p>
             <div class="reveal reveal-delay-4">
-              <a href="a-propos.html" class="btn btn-outline">En savoir plus →</a>
+              <a href="a-propos.html" class="btn btn-outline">
+  <span class="btn-text">En savoir plus</span>
+  <span class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </span>
+</a>
             </div>
           </div>
 
@@ -546,25 +494,22 @@
           <h2 class="reveal reveal-delay-1">Transformez votre officine dès aujourd'hui</h2>
           <p class="reveal reveal-delay-2">Une question, un devis ou une inscription ? Remplissez ce formulaire et votre OPCO-EP s'occupe du reste. Réponse sous 24h à 48h, 100% pris en charge.</p>
           <div class="btn-group reveal reveal-delay-3">
-            <a href="contact.html" class="btn btn-accent btn-lg">Nous contacter →</a>
+            <a href="contact.html" class="btn btn-accent btn-lg">
+  <span class="btn-text">Nous contacter</span>
+  <span class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </span>
+</a>
             <button
-              class="btn-calendly"
+              class="btn btn-calendly"
               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/benjamin-herisson/30min'});return false;"
               aria-label="Réserver un appel découverte de 20 min avec Benjamin Herisson"
             >
-              <span class="calendly-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                  <line x1="8" y1="14" x2="8" y2="14"></line>
-                  <line x1="12" y1="14" x2="12" y2="14"></line>
-                  <line x1="16" y1="14" x2="16" y2="14"></line>
-                </svg>
-              </span>
-              Réserver un appel
-            </button>
+  <span class="btn-text">Réserver un appel découverte</span>
+  <span class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </span>
+</button>
           </div>
         </div>
       </div>

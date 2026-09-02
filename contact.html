@@ -378,7 +378,12 @@
                 <textarea id="message" name="message" class="form-control" placeholder="Précisez votre besoin (inscription, devis, etc.)" required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: var(--text-lg);">Envoyer ma demande</button>
+              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: var(--text-lg);">
+  <span class="btn-text">Envoyer ma demande</span>
+  <span class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </span>
+</button>
               
               <p class="rgpd-note">
                 En soumettant ce formulaire, vous acceptez que vos données personnelles soient utilisées pour vous recontacter. Bhevia Pharma s'engage à ne jamais céder vos informations à des tiers sans votre consentement.
@@ -394,10 +399,12 @@
               <h2 class="success-title">Message bien reçu !</h2>
               <p class="success-subtitle">Merci pour votre demande.<br>Benjamin reviendra vers vous sous <strong>24h à 48h</strong>.</p>
               <p class="success-countdown" id="redirect-countdown">Redirection dans <span id="countdown-num">5</span> secondes…</p>
-              <a href="index.html" class="success-home-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                Retour à l'accueil
-              </a>
+              <a href="index.html" class="btn btn-primary">
+  <span class="btn-text">Retourner à l'accueil</span>
+  <span class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </span>
+</a>
             </div>
           </div>
 

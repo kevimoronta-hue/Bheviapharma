@@ -130,59 +130,183 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 /* ===========================
    Buttons
 =========================== */
+/* ===========================
+   Buttons (Refonte Premium)
+=========================== */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: 14px 28px;
-  border-radius: var(--radius-sm);
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 8px 8px 20px;
+  border-radius: var(--radius-full);
   font-family: var(--font-main);
   font-size: var(--text-base);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-weight: 600;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
   border: 1px solid transparent;
+  text-decoration: none;
 }
+
+.btn-text {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.btn-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-arrow svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* --- .btn-primary (Bleu) --- */
 .btn-primary {
   background: var(--color-primary);
   color: white;
   border-color: var(--color-primary);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 16px rgba(27, 43, 94, 0.25);
+}
+.btn-primary .btn-arrow {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
 }
 .btn-primary:hover {
-  background: var(--color-primary-light);
-  border-color: var(--color-primary-light);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  background: var(--color-primary);
+  box-shadow: 0 12px 32px rgba(27, 43, 94, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+  transform: translateY(-2px) scale(1.01);
 }
+.btn-primary:hover .btn-arrow {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  transform: translate(2px, -2px);
+}
+
+/* --- .btn-accent (Jaune) --- */
 .btn-accent {
   background: var(--color-accent);
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   border-color: var(--color-accent);
-  box-shadow: 0 4px 16px rgba(245,167,35,0.25);
+  box-shadow: 0 4px 16px rgba(245, 167, 35, 0.25);
+}
+.btn-accent .btn-arrow {
+  background: rgba(11, 19, 44, 0.1);
+  border: 1px solid rgba(11, 19, 44, 0.15);
+  color: var(--color-primary-dark);
 }
 .btn-accent:hover {
-  background: var(--color-accent-dark);
-  border-color: var(--color-accent-dark);
-  box-shadow: 0 6px 24px rgba(245,167,35,0.35);
-  transform: translateY(-2px);
+  background: var(--color-accent);
+  box-shadow: 0 12px 32px rgba(245, 167, 35, 0.35), inset 0 1px 0 rgba(255,255,255,0.4);
+  transform: translateY(-2px) scale(1.01);
 }
+.btn-accent:hover .btn-arrow {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  transform: translate(2px, -2px);
+}
+
+/* --- .btn-outline (Blanc/Transparent border bleu) --- */
 .btn-outline {
   background: transparent;
   color: var(--color-primary);
-  border-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+.btn-outline .btn-arrow {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
 }
 .btn-outline:hover {
-  background: var(--color-primary);
-  color: white;
-  transform: translateY(-2px);
+  background: transparent;
+  box-shadow: 0 12px 32px rgba(27, 43, 94, 0.15);
+  transform: translateY(-2px) scale(1.01);
 }
+.btn-outline:hover .btn-arrow {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  transform: translate(2px, -2px);
+}
+
+/* --- .btn-white (Blanc solide) --- */
 .btn-white {
   background: white;
   color: var(--color-primary);
-  border-color: white;
+  border: 1px solid white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+.btn-white .btn-arrow {
+  background: rgba(27, 43, 94, 0.05);
+  border: 1px solid rgba(27, 43, 94, 0.1);
+  color: var(--color-primary);
+}
+.btn-white:hover {
+  background: white;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px) scale(1.01);
+}
+.btn-white:hover .btn-arrow {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  transform: translate(2px, -2px);
+}
+
+/* --- .btn-calendly --- */
+.btn-calendly {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.btn-calendly .btn-arrow {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.btn-calendly:hover {
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.3);
+  transform: translateY(-2px) scale(1.01);
+}
+.btn-calendly:hover .btn-arrow {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  transform: translate(2px, -2px);
+}
+.cta-final-white .btn-calendly {
+  border-color: var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+}
+.cta-final-white .btn-calendly .btn-arrow {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.cta-final-white .btn-calendly:hover {
+  background: transparent;
+  box-shadow: 0 12px 32px rgba(27, 43, 94, 0.15);
+}
+.cta-final-white .btn-calendly:hover .btn-arrow {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
 }
 .btn-white:hover {
   background: var(--color-background);
