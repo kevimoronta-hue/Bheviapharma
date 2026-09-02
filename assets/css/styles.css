@@ -1580,6 +1580,24 @@ p { color: var(--color-text-muted); line-height: 1.75; }
    Navbar Responsive Breakpoint (Atomique)
 =========================== */
 @media (max-width: 1080px) {
+  /* ===========================
+     Micro-patch Navbar Mobile
+  =========================== */
+  .navbar {
+    width: calc(100% - 24px);
+    height: 60px;
+    top: 12px;
+  }
+  .navbar-inner {
+    padding: 0 var(--space-4);
+  }
+  .nav-logo img, .nav-logo-svg {
+    height: 44px !important;
+  }
+  .nav-overlay {
+    padding-top: calc(12px + 60px + 10px);
+  }
+
   .nav-links,
   .navbar-inner .desktop-premium-cta {
     display: none !important;
