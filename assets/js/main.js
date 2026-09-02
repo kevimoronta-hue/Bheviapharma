@@ -16,17 +16,27 @@ const navOverlay = document.getElementById('nav-overlay');
 const navCloseButtons = document.querySelectorAll('.nav-close');
 
 if (hamburger && navOverlay) {
+  const closeMenu = () => {
+    hamburger.classList.remove('open');
+    navOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
   hamburger.addEventListener('click', () => {
     const isOpen = hamburger.classList.toggle('open');
     navOverlay.classList.toggle('open', isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
+
+  /* Clic en dehors du panneau = Fermeture */
+  navOverlay.addEventListener('click', (e) => {
+    if (e.target === navOverlay) {
+      closeMenu();
+    }
+  });
+
   navOverlay.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navOverlay.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
   });
 }
 
