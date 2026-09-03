@@ -2065,6 +2065,7 @@
     .game-card-v20::before {
       display: none !important;
       content: none !important;
+      pointer-events: none !important;
     }
 
     .game-banner-v20 {
@@ -2875,9 +2876,9 @@
           <!-- Desktop version -->
           <div class="desktop-only-content">
             <div class="game-banner-v20">
-              <img src="assets/images/jeu-comptoir-desktop-sans-bouton.png" alt="Le jeu comptoir BHEVIA — Quelle couleur ?">
+              <img src="assets/images/jeu-comptoir-desktop-sans-bouton.png" alt="Le jeu comptoir BHEVIA — Quelle couleur ?" style="pointer-events: none;">
             </div>
-            <a href="jeu-comptoir.html" class="btn btn-accent" style="position: absolute; bottom: 7%; left: 5%; z-index: 10;">
+            <a href="jeu-comptoir.html" class="btn btn-accent" style="position: absolute; bottom: 7%; left: 5%; z-index: 50; cursor: pointer; pointer-events: auto;">
               <span class="btn-text">Jouer maintenant</span>
               <span class="btn-arrow">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -2888,8 +2889,8 @@
           <!-- Mobile version (9:16) -->
           <div class="mobile-only-content">
             <div style="position: relative; display: inline-block; width: 100%; max-width: 450px;">
-              <img src="assets/images/jeu-comptoir-mobile-sans-bouton.png" alt="Le jeu comptoir BHEVIA — Quelle couleur ?" style="display: block; width: 100%; height: auto; object-fit: contain; margin: 0 auto;">
-              <a href="jeu-comptoir.html" class="btn btn-accent" style="position: absolute; top: 42%; left: 50%; transform: translateX(-50%); z-index: 10;">
+              <img src="assets/images/jeu-comptoir-mobile-sans-bouton.png" alt="Le jeu comptoir BHEVIA — Quelle couleur ?" style="display: block; width: 100%; height: auto; object-fit: contain; margin: 0 auto; pointer-events: none;">
+              <a href="jeu-comptoir.html" class="btn btn-accent" style="position: absolute; top: 42%; left: 50%; transform: translateX(-50%); z-index: 50; cursor: pointer; pointer-events: auto;">
                 <span class="btn-text">Jouer maintenant</span>
                 <span class="btn-arrow">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
