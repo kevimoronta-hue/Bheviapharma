@@ -1546,7 +1546,12 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 }
 
 /* Mobile Responsiveness (< 991px) */
+
 @media (max-width: 991px) {
+  .scalia-logo {
+    height: 30px !important;
+  }
+
   .footer {
     padding: 0;
   }
@@ -1773,4 +1778,307 @@ p { color: var(--color-text-muted); line-height: 1.75; }
 }
 .cta-final-white p {
   color: var(--color-text-muted);
+}
+
+/* =====================
+   HERO CTAs (Premium Navbar Style)
+===================== */
+.hero-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 10px 10px 20px !important;
+  border-radius: var(--radius-full) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  height: 52px !important; /* Forces strict identical height */
+  box-sizing: border-box !important;
+}
+
+/* Primary Button Adjustments */
+.hero-cta.btn-primary {
+  box-shadow: 
+    0 8px 24px rgba(27, 43, 94, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+.hero-cta.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 
+    0 12px 32px rgba(27, 43, 94, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Outline Button Adjustments */
+.hero-cta.btn-outline {
+  background: rgba(255,255,255,0.02) !important;
+  border: 1px solid var(--color-primary) !important;
+  box-shadow: 
+    0 8px 24px rgba(27, 43, 94, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+}
+.hero-cta.btn-outline:hover {
+  background: rgba(27, 43, 94, 0.05) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 
+    0 12px 32px rgba(27, 43, 94, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Arrows */
+.hero-cta .btn-arrow {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.hero-cta.btn-primary .btn-arrow {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+.hero-cta.btn-outline .btn-arrow {
+  background: transparent !important;
+  border: 1px solid var(--color-primary) !important;
+}
+
+.hero-cta:hover .btn-arrow {
+  transform: translate(2px, -2px) !important;
+}
+.hero-cta.btn-primary:hover .btn-arrow {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-primary-dark) !important;
+}
+.hero-cta.btn-outline:hover .btn-arrow {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: white !important;
+}
+
+.hero-cta .btn-arrow svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* HERO MEDIA QUERIES */
+
+@media (max-width: 1366px) and (min-width: 992px) {
+  .hero-inner {
+    padding: var(--space-12) var(--space-12) !important;
+  }
+  .hero-content h1 {
+    font-size: var(--text-4xl) !important;
+  }
+  .hero-illustration-container {
+    max-width: 560px !important;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-cta {
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    font-size: 14px !important;
+  }
+  .hero-cta .btn-text {
+    white-space: normal !important;
+    text-align: left !important;
+    line-height: 1.2 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-cta {
+    height: auto !important;
+    min-height: 52px !important;
+  }
+}
+
+/* =====================
+   FINAL CTA BUTTONS REFINEMENT
+===================== */
+.cta-final .btn-group .btn {
+  padding: 10px 10px 10px 20px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  gap: 12px !important;
+  border-radius: var(--radius-full) !important;
+  height: 52px !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.cta-final .btn-group .btn:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.cta-final .btn-group .btn-arrow {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+}
+
+.cta-final .btn-group .btn:hover .btn-arrow {
+  transform: translate(2px, -2px) !important;
+}
+
+.cta-final .btn-group .btn-arrow svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+@media (max-width: 768px) {
+  .cta-final .btn-group .btn {
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    min-height: 52px !important;
+    font-size: 14px !important;
+  }
+  .cta-final .btn-group .btn .btn-text {
+    white-space: normal !important;
+    text-align: left !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Center "Voir le programme complet" */
+  .programme-cta-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* Make sure .btn itself doesn't stretch by default if a parent is flex-col */
+  .programme-cta-wrap .btn,
+  .about-content .btn {
+    width: fit-content !important;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Center "En savoir plus" in about-content */
+  .about-content .reveal-delay-4 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* =====================
+   SCALIA LOGO FOOTER
+===================== */
+.footer-bottom {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+.footer-copyright {
+  flex: 1;
+  text-align: left;
+  order: 1;
+}
+.scalia-logo-wrapper {
+  flex-shrink: 0;
+  margin: 0 20px;
+  order: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scalia-logo-link {
+  display: block;
+  opacity: 0.95;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.scalia-logo-link:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+.scalia-logo {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+.footer-legal-links {
+  flex: 1;
+  justify-content: flex-end;
+  display: flex;
+  order: 3;
+}
+
+
+@media (max-width: 991px) {
+  .scalia-logo {
+    height: 30px !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: var(--space-4) !important;
+  }
+  .footer-copyright {
+    order: 1;
+    text-align: center;
+    flex: none;
+  }
+  .footer-legal-links {
+    order: 2;
+    justify-content: center;
+    flex: none;
+  }
+  .scalia-logo-wrapper {
+    order: 3;
+    margin: 20px 0 0 0; /* Vraie respiration verticale */
+    flex: none;
+  }
+}
+
+
+
+/* =====================
+   HERO DESKTOP PATCH (TEXT SHIFT & IMAGE MASK)
+===================== */
+@media (min-width: 992px) {
+  /* Shift text block slightly right */
+  .hero-content {
+    padding-left: var(--space-8);
+  }
+  
+  /* Micro-reduction of title using transform to respect all media queries */
+  .hero-content h1 {
+    transform: scale(0.95);
+    transform-origin: left center;
+  }
+  
+  /* Image dissolve effect */
+  .hero-illustration-container {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    -webkit-mask-image: 
+      linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: 
+      linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-composite: intersect;
+  }
 }
