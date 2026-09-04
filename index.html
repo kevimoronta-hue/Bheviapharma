@@ -16,7 +16,67 @@
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <style>
+  .hero-actions {
+    justify-content: center;
+    max-width: 480px;
+  }
 
+  /* Animations for Floating CTA */
+  @keyframes subtle-vibrate {
+    0%, 90% { transform: translateY(0); }
+    92% { transform: translateY(-2px); }
+    94% { transform: translateY(1px); }
+    96% { transform: translateY(-1px); }
+    98% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes subtle-halo {
+    0%, 100% { box-shadow: 0 4px 16px rgba(19, 34, 75, 0.3), 0 0 0 0 rgba(19, 34, 75, 0.3); }
+    50% { box-shadow: 0 4px 16px rgba(19, 34, 75, 0.3), 0 0 0 8px rgba(19, 34, 75, 0); }
+  }
+
+  .floating-mobile-cta {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .floating-mobile-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 24px;
+      bottom: calc(24px + env(safe-area-inset-bottom));
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background-color: var(--color-primary);
+      border-radius: 50%;
+      z-index: 90;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      
+      /* New animations and transition */
+      animation: subtle-vibrate 8s ease-in-out infinite, subtle-halo 4s ease-in-out infinite;
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .floating-cta-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+    .floating-mobile-cta:active {
+      transform: scale(0.92) !important;
+      animation: none; /* stop animations during tap */
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .floating-mobile-cta {
+        animation: none;
+        box-shadow: 0 4px 16px rgba(19, 34, 75, 0.3);
+      }
+    }
+  }
 </style>
 </head>
 <body>
@@ -86,20 +146,13 @@
 
         <!-- Left: Content -->
         <div class="hero-content">
-          <span class="badge badge-primary">✦ Bhevia Pharma · Formation Certifiée</span>
-          <h1>Élevez l'<em>excellence</em> de votre équipe</h1>
+          <h1>La formation qui transforme les <em>officines</em></h1>
           <p class="hero-subtitle">
-            Formation professionnelle en pharmacie conçue pour des équipes qui veulent allier impact, confiance et performance au comptoir.
+            Deux jours pour mieux conseiller les patients, renforcer l'équipe et développer la performance de l'officine.
           </p>
           <div class="hero-actions">
             <a href="formation.html" class="btn btn-primary hero-cta">
   <span class="btn-text">Découvrir la formation</span>
-  <span class="btn-arrow">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-  </span>
-</a>
-            <a href="contact.html" class="btn btn-outline hero-cta">
-  <span class="btn-text">Nous contacter</span>
   <span class="btn-arrow">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
   </span>
@@ -594,5 +647,10 @@
   
 
   <script src="assets/js/main.js"></script>
+
+  <!-- Floating Mobile CTA -->
+  <a href="https://calendly.com/benjamin-herisson/30min" target="_blank" rel="noopener" class="floating-mobile-cta" aria-label="Réserver un appel" onclick="if(window.Calendly){Calendly.initPopupWidget({url: 'https://calendly.com/benjamin-herisson/30min'});return false;}">
+    <img src="assets/images/A-bhevia-blanc.png" alt="A Bhevia" class="floating-cta-icon">
+  </a>
 </body>
 </html>
