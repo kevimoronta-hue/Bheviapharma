@@ -1690,7 +1690,7 @@ p { color: var(--color-text-muted); line-height: 1.75; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
   .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
   .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
-  .stat-item:last-child { border-bottom: none; }
+  .stat-item:nth-last-child(-n+2) { border-bottom: none; }
   
   .contact-layout { grid-template-columns: 1fr; text-align: center; gap: var(--space-8); }
   .contact-info-card { text-align: left; }
