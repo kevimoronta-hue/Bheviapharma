@@ -161,3 +161,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+
+/* ===========================
+   Global Mobile Calendly CTA
+=========================== */
+(function() {
+  // Inject Calendly CSS
+  if (!document.querySelector('link[href*="calendly"]')) {
+    const link = document.createElement('link');
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  }
+
+  // Inject Calendly JS
+  if (!document.querySelector('script[src*="calendly"]')) {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.type = 'text/javascript';
+    script.async = true;
+    document.head.appendChild(script);
+  }
+
+  // Inject floating CTA
+  if (!document.querySelector('.floating-mobile-cta')) {
+    const cta = document.createElement('a');
+    cta.href = 'https://calendly.com/benjamin-herisson/30min';
+    cta.target = '_blank';
+    cta.rel = 'noopener';
+    cta.className = 'floating-mobile-cta';
+    cta.setAttribute('aria-label', 'Réserver un appel');
+    cta.onclick = function(e) {
+      if(window.Calendly) {
+        e.preventDefault();
+        Calendly.initPopupWidget({url: 'https://calendly.com/benjamin-herisson/30min'});
+        return false;
+      }
+    };
+
+    const img = document.createElement('img');
+    img.src = 'assets/images/A-bhevia-blanc.png';
+    img.alt = 'A Bhevia';
+    img.className = 'floating-cta-icon';
+    
+    cta.appendChild(img);
+    document.body.appendChild(cta);
+  }
+})();
