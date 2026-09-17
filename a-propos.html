@@ -19,6 +19,24 @@
     @media (max-width: 900px) {
       .about-page-grid { grid-template-columns: 1fr; }
     }
+    @media (min-width: 901px) {
+      /* Photo + crédentials en bande centrée sur toute la largeur, texte en dessous, desktop uniquement */
+      .about-page-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-page-photo-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-page-photo-col .about-page-photo {
+        width: 100%;
+        max-width: 584px;
+      }
+      .about-page-photo-col .about-credentials-block {
+        max-width: 584px;
+      }
+    }
     .about-page-photo {
       border-radius: var(--radius-xl);
       overflow: hidden;
@@ -137,7 +155,7 @@
         <div class="about-page-grid">
           
           <!-- LEFT : Photo -->
-          <div class="reveal reveal-left">
+          <div class="reveal reveal-left about-page-photo-col">
             <div class="about-page-photo">
               <img src="assets/images/benjamin-herisson.jpg" alt="Benjamin Herisson" onerror="this.style.display='none'">
             </div>
@@ -145,16 +163,11 @@
               <div class="credentials-logos">
                 <img src="assets/images/logos/hec_user.png" alt="HEC Paris" style="height: 48px; width: auto; object-fit: contain;">
                 <img src="assets/images/logos/essec_user.png" alt="ESSEC" style="height: 76px; width: auto; object-fit: contain;">
-                <img src="assets/images/logos/qualiopi_user.png" alt="Qualiopi" style="height: 60px; width: auto; object-fit: contain;">
               </div>
               <div class="about-credentials-text">
                 <div class="credential-row">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                   <strong>Diplômé HEC Paris & ESSEC</strong>
-                </div>
-                <div class="credential-row italic-row">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  <span>En cours de qualification Qualiopi</span>
                 </div>
               </div>
             </div>
