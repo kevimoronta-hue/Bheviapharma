@@ -1982,6 +1982,20 @@ p { color: var(--color-text-muted); line-height: 1.75; }
   }
 }
 
+@media (min-width: 769px) {
+  /* Center "Voir le programme complet" under the formation preview text */
+  .programme-cta-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Center "En savoir plus" under the Benjamin Herisson text */
+  .about-content .reveal-delay-4 {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 /* =====================
    SCALIA LOGO FOOTER
 ===================== */
